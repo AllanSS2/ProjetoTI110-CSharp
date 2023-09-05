@@ -9,3 +9,5 @@ C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\EmpresaABC\Merc
 C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\EmpresaABC\MercadoSA\obj\Debug\MercadoSA.exe
 C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\EmpresaABC\MercadoSA\obj\Debug\MercadoSA.pdb
 C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\EmpresaABC\MercadoSA\obj\Debug\MercadoSA.Form1.resources
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\EmpresaABC\MercadoSA\obj\Debug\MercadoSA.frmSplash.resources
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\EmpresaABC\MercadoSA\obj\Debug\MercadoSA.frmMenuPrincipal.resources
