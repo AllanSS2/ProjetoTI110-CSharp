@@ -36,9 +36,9 @@ namespace MercadoSA
             this.btnCalcular = new System.Windows.Forms.Button();
             this.rdbAdicao = new System.Windows.Forms.RadioButton();
             this.gpbOperadores = new System.Windows.Forms.GroupBox();
-            this.rdbSubtracao = new System.Windows.Forms.RadioButton();
-            this.rdbMultiplicacao = new System.Windows.Forms.RadioButton();
             this.rdbDivisao = new System.Windows.Forms.RadioButton();
+            this.rdbMultiplicacao = new System.Windows.Forms.RadioButton();
+            this.rdbSubtracao = new System.Windows.Forms.RadioButton();
             this.lblResultado = new System.Windows.Forms.Label();
             this.txtV1 = new System.Windows.Forms.TextBox();
             this.btnLimpar = new System.Windows.Forms.Button();
@@ -113,6 +113,28 @@ namespace MercadoSA
             this.gpbOperadores.TabStop = false;
             this.gpbOperadores.Text = "Operações";
             // 
+            // rdbDivisao
+            // 
+            this.rdbDivisao.AutoSize = true;
+            this.rdbDivisao.Location = new System.Drawing.Point(34, 165);
+            this.rdbDivisao.Name = "rdbDivisao";
+            this.rdbDivisao.Size = new System.Drawing.Size(89, 22);
+            this.rdbDivisao.TabIndex = 9;
+            this.rdbDivisao.TabStop = true;
+            this.rdbDivisao.Text = "Divisão(/)";
+            this.rdbDivisao.UseVisualStyleBackColor = true;
+            // 
+            // rdbMultiplicacao
+            // 
+            this.rdbMultiplicacao.AutoSize = true;
+            this.rdbMultiplicacao.Location = new System.Drawing.Point(34, 127);
+            this.rdbMultiplicacao.Name = "rdbMultiplicacao";
+            this.rdbMultiplicacao.Size = new System.Drawing.Size(128, 22);
+            this.rdbMultiplicacao.TabIndex = 8;
+            this.rdbMultiplicacao.TabStop = true;
+            this.rdbMultiplicacao.Text = "Multiplicação(*)";
+            this.rdbMultiplicacao.UseVisualStyleBackColor = true;
+            // 
             // rdbSubtracao
             // 
             this.rdbSubtracao.AutoSize = true;
@@ -123,28 +145,6 @@ namespace MercadoSA
             this.rdbSubtracao.TabStop = true;
             this.rdbSubtracao.Text = "Subtração(-)";
             this.rdbSubtracao.UseVisualStyleBackColor = true;
-            // 
-            // rdbMultiplicacao
-            // 
-            this.rdbMultiplicacao.AutoSize = true;
-            this.rdbMultiplicacao.Location = new System.Drawing.Point(34, 137);
-            this.rdbMultiplicacao.Name = "rdbMultiplicacao";
-            this.rdbMultiplicacao.Size = new System.Drawing.Size(128, 22);
-            this.rdbMultiplicacao.TabIndex = 8;
-            this.rdbMultiplicacao.TabStop = true;
-            this.rdbMultiplicacao.Text = "Multiplicação(*)";
-            this.rdbMultiplicacao.UseVisualStyleBackColor = true;
-            // 
-            // rdbDivisao
-            // 
-            this.rdbDivisao.AutoSize = true;
-            this.rdbDivisao.Location = new System.Drawing.Point(35, 177);
-            this.rdbDivisao.Name = "rdbDivisao";
-            this.rdbDivisao.Size = new System.Drawing.Size(89, 22);
-            this.rdbDivisao.TabIndex = 9;
-            this.rdbDivisao.TabStop = true;
-            this.rdbDivisao.Text = "Divisão(/)";
-            this.rdbDivisao.UseVisualStyleBackColor = true;
             // 
             // lblResultado
             // 
@@ -172,6 +172,7 @@ namespace MercadoSA
             this.btnLimpar.TabIndex = 5;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnSair
             // 
