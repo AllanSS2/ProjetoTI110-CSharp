@@ -18,10 +18,6 @@ namespace MercadoSA
             desabilitarCampos();
         }
 
-        private void frmPesquisarFuncionarios_Load(object sender, EventArgs e)
-        {
-            
-        }
 
         //Desabilitar campos
         public void desabilitarCampos()
@@ -33,7 +29,7 @@ namespace MercadoSA
             rdbCodigo.Checked = false;
             rdbNome.Checked = false;
         }
-        
+
         //Habilitar campos
         public void habilitarCampos()
         {
@@ -49,7 +45,8 @@ namespace MercadoSA
             txtDescricao.Clear();
             rdbCodigo.Checked = false;
             rdbNome.Checked = false;
-            txtDescricao.Focus();
+            txtDescricao.Enabled = false;
+            //txtDescricao.Focus();
             //Limpar a lista
             ltbPesquisar.Items.Clear();
         }
@@ -74,6 +71,23 @@ namespace MercadoSA
         {
             ltbPesquisar.Items.Clear();
             ltbPesquisar.Items.Add(txtDescricao.Text);
+        }
+
+        private void ltbPesquisar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ltbPesquisar.SelectedItem == null)
+            {
+                MessageBox.Show("Favor selecionar um item!", "Mensagem do sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            { 
+                string nome = ltbPesquisar.SelectedItem.ToString();
+                frmFuncionarios abrir = new frmFuncionarios(nome);
+                abrir.Show();
+                this.Hide();
+            }
+
+
         }
     }
 }

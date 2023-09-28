@@ -27,6 +27,14 @@ namespace MercadoSA
             InitializeComponent();
             desabilitarCampos();
         }
+        public frmFuncionarios(string nome)
+        {
+            InitializeComponent();
+            desabilitarCampos();
+            txtNome.Text = nome;
+            //habilitar os campos
+            habilitarCamposAlterar();
+        }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
@@ -124,6 +132,30 @@ namespace MercadoSA
             btnLimpar.Enabled = true;
             btnNovo.Enabled = false;
         }
+        public void habilitarCamposAlterar()
+        {
+            txtCodigo.Enabled = false;
+            txtNome.Enabled = true;
+            txtEndereco.Enabled = true;
+            txtBairro.Enabled = true;
+            txtCidade.Enabled = true;
+            txtNumero.Enabled = true;
+            txtEmail.Enabled = true;
+            mskCep.Enabled = true;
+            mskCpf.Enabled = true;
+            cbbEstado.Enabled = true;
+            dtpDNasc.Enabled = true;
+
+
+
+            btnCadastrar.Enabled = false;
+            btnAlterar.Enabled = true;
+            btnExcluir.Enabled = true;
+            btnLimpar.Enabled = false;
+            btnNovo.Enabled = false;
+
+            txtNome.Focus();
+        }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
@@ -143,7 +175,7 @@ namespace MercadoSA
                 desabilitarCamposNovo();
                 limparCampos();
             }
-            
+
         }
 
         private void frmFuncionarios_Load(object sender, EventArgs e)
@@ -156,7 +188,39 @@ namespace MercadoSA
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             frmPesquisarFuncionarios abrir = new frmPesquisarFuncionarios();
-            abrir.ShowDialog();
+            abrir.Show();
+            this.Hide();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Alterado com sucesso!","Mensagem do sistema", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            limparCampos();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            DialogResult resp = MessageBox.Show("Deseja realmente excluir?", "Mensagem do sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            if (resp == DialogResult.OK )
+            {
+                limparCampos();
+            }
+            else
+            {
+
+            }
+        }
+
+        private void btnCarregaCEP_Click(object sender, EventArgs e)
+        {
+            WSCorreios.AtendeClienteClient ws = new WSCorreios.AtendeClienteClient();
+
+            WSCorreios.enderecoERP endereco = ws.consultaCEP(mskCep.Text);
+
+            txtEndereco.Text = endereco.end;
+            txtBairro.Text = endereco.bairro;
+            txtCidade.Text = endereco.cidade;
+            cbbEstado.Text = endereco.uf;
         }
     }
 }
