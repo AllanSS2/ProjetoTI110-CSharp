@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using MySql.Data.MySqlClient;
 
 namespace MercadoSA
 {
@@ -162,6 +163,34 @@ namespace MercadoSA
             habilitarCampos();
         }
 
+        //Cadastrando funcionários no banco de dados
+        public void cadastrarFuncionarios()
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "insert into tbFuncionarios(nome, email, cpf, dNasc, endereco, cep, numero, bairro, estado, cidade) values(@nome, @email, @cpf, @dNasc, @endereco, @cep, @numero, @bairro, @estado, @cidade);";
+            comm.CommandType = CommandType.Text;
+
+            comm.Parameters.Clear();
+
+            comm.Parameters.Add("@nome", MySqlDbType.VarChar,100).Value = txtNome.Text;
+            comm.Parameters.Add("@email", MySqlDbType.VarChar,100).Value = txtEmail.Text;
+            comm.Parameters.Add("@cpf", MySqlDbType.VarChar,14).Value = mskCpf.Text;
+            comm.Parameters.Add("@dNasc", MySqlDbType.Date).Value = dtpDNasc.Text;
+            comm.Parameters.Add("@endereco", MySqlDbType.VarChar,100).Value = txtEndereco.Text;
+            comm.Parameters.Add("@cep", MySqlDbType.VarChar,9).Value = mskCep.Text;
+            comm.Parameters.Add("@numero", MySqlDbType.VarChar,10).Value = txtNumero.Text;
+            comm.Parameters.Add("@bairro", MySqlDbType.VarChar,100).Value = txtBairro.Text;
+            comm.Parameters.Add("@estado", MySqlDbType.VarChar,2).Value = cbbEstado.Text;
+            comm.Parameters.Add("@cidade", MySqlDbType.VarChar,100).Value = txtCidade.Text;
+
+            comm.Connection = Conexao.obterConexao();
+
+            comm.ExecuteNonQuery();
+
+            Conexao.fecharConexao();
+
+        }
+
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             if (txtNome.Text.Equals("") || txtEmail.Text.Equals("") || txtEndereco.Text.Equals("") || txtNumero.Text.Equals("") || txtCidade.Text.Equals("") || txtBairro.Text.Equals("") || mskCpf.Text.Equals("   .   .   -") || mskCep.Text.Equals("     -") || cbbEstado.Text.Equals(""))
@@ -194,14 +223,14 @@ namespace MercadoSA
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Alterado com sucesso!","Mensagem do sistema", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            MessageBox.Show("Alterado com sucesso!", "Mensagem do sistema", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             limparCampos();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             DialogResult resp = MessageBox.Show("Deseja realmente excluir?", "Mensagem do sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
-            if (resp == DialogResult.OK )
+            if (resp == DialogResult.OK)
             {
                 limparCampos();
             }
@@ -211,16 +240,31 @@ namespace MercadoSA
             }
         }
 
-        private void btnCarregaCEP_Click(object sender, EventArgs e)
+        private void mskCep_KeyDown(object sender, KeyEventArgs e)
         {
-            WSCorreios.AtendeClienteClient ws = new WSCorreios.AtendeClienteClient();
+            if (e.KeyCode == Keys.Enter)
+            {
+                WSCorreios.AtendeClienteClient ws = new WSCorreios.AtendeClienteClient();
 
-            WSCorreios.enderecoERP endereco = ws.consultaCEP(mskCep.Text);
+                try
+                {
+                    WSCorreios.enderecoERP endereco = ws.consultaCEP(mskCep.Text);
 
-            txtEndereco.Text = endereco.end;
-            txtBairro.Text = endereco.bairro;
-            txtCidade.Text = endereco.cidade;
-            cbbEstado.Text = endereco.uf;
+                    txtEndereco.Text = endereco.end;
+                    txtBairro.Text = endereco.bairro;
+                    txtCidade.Text = endereco.cidade;
+                    cbbEstado.Text = endereco.uf;
+
+                    txtNumero.Focus();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Favor inserir um CEP válido.", "Mensagem do sistema", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    mskCep.Focus();
+                    mskCep.Clear();
+                }
+            }
+
         }
     }
 }

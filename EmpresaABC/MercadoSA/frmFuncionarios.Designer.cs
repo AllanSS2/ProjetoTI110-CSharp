@@ -61,7 +61,6 @@ namespace MercadoSA
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
-            this.btnCarregaCEP = new System.Windows.Forms.Button();
             this.gpbFuncionarios.SuspendLayout();
             this.pnlCRUD.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +68,6 @@ namespace MercadoSA
             // gpbFuncionarios
             // 
             this.gpbFuncionarios.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.gpbFuncionarios.Controls.Add(this.btnCarregaCEP);
             this.gpbFuncionarios.Controls.Add(this.txtBairro);
             this.gpbFuncionarios.Controls.Add(this.lblBairro);
             this.gpbFuncionarios.Controls.Add(this.lblEstado);
@@ -180,6 +178,7 @@ namespace MercadoSA
             this.mskCep.Name = "mskCep";
             this.mskCep.Size = new System.Drawing.Size(77, 24);
             this.mskCep.TabIndex = 11;
+            this.mskCep.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mskCep_KeyDown);
             // 
             // lblCep
             // 
@@ -398,16 +397,6 @@ namespace MercadoSA
             this.btnNovo.UseVisualStyleBackColor = true;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
-            // btnCarregaCEP
-            // 
-            this.btnCarregaCEP.Location = new System.Drawing.Point(587, 289);
-            this.btnCarregaCEP.Name = "btnCarregaCEP";
-            this.btnCarregaCEP.Size = new System.Drawing.Size(144, 77);
-            this.btnCarregaCEP.TabIndex = 21;
-            this.btnCarregaCEP.Text = "Carrega CEP";
-            this.btnCarregaCEP.UseVisualStyleBackColor = true;
-            this.btnCarregaCEP.Click += new System.EventHandler(this.btnCarregaCEP_Click);
-            // 
             // frmFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -463,6 +452,5 @@ namespace MercadoSA
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnNovo;
-        private System.Windows.Forms.Button btnCarregaCEP;
     }
 }
