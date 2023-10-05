@@ -9,7 +9,7 @@ namespace MercadoSA
 {
     class Conexao
     {
-        private static string conn = "Server=localhost;Port=3306;Database=dbmercadosa;Uid=loja;Pwd=208218";
+        private static string conn = "Server=localhost;Port=3306;Database=dbMercadosab;Uid=loja;Pwd=208218";
 
         private static MySqlConnection con = null;
 
