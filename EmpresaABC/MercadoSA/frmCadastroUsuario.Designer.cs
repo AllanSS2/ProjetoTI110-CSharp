@@ -47,6 +47,10 @@ namespace MercadoSA
             this.gpbFuncionarios = new System.Windows.Forms.GroupBox();
             this.txtRepetirSenha = new System.Windows.Forms.TextBox();
             this.lblRepetirSenha = new System.Windows.Forms.Label();
+            this.lblFuncSemUsu = new System.Windows.Forms.Label();
+            this.lstFuncSemUsu = new System.Windows.Forms.ListBox();
+            this.lblCodFunc = new System.Windows.Forms.Label();
+            this.txtCodFunc = new System.Windows.Forms.TextBox();
             this.pnlCRUD.SuspendLayout();
             this.gpbFuncionarios.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +81,7 @@ namespace MercadoSA
             this.btnVoltar.Text = "&Voltar";
             this.btnVoltar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
@@ -137,6 +142,7 @@ namespace MercadoSA
             this.btnCadastrar.Text = "&Cadastrar";
             this.btnCadastrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // btnNovo
             // 
@@ -149,6 +155,7 @@ namespace MercadoSA
             this.btnNovo.Text = "&Novo";
             this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // txtSenha
             // 
@@ -206,6 +213,10 @@ namespace MercadoSA
             // gpbFuncionarios
             // 
             this.gpbFuncionarios.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.gpbFuncionarios.Controls.Add(this.txtCodFunc);
+            this.gpbFuncionarios.Controls.Add(this.lblCodFunc);
+            this.gpbFuncionarios.Controls.Add(this.lstFuncSemUsu);
+            this.gpbFuncionarios.Controls.Add(this.lblFuncSemUsu);
             this.gpbFuncionarios.Controls.Add(this.txtRepetirSenha);
             this.gpbFuncionarios.Controls.Add(this.lblRepetirSenha);
             this.gpbFuncionarios.Controls.Add(this.txtSenha);
@@ -240,6 +251,42 @@ namespace MercadoSA
             this.lblRepetirSenha.Size = new System.Drawing.Size(101, 18);
             this.lblRepetirSenha.TabIndex = 10;
             this.lblRepetirSenha.Text = "Repetir Senha";
+            // 
+            // lblFuncSemUsu
+            // 
+            this.lblFuncSemUsu.AutoSize = true;
+            this.lblFuncSemUsu.Location = new System.Drawing.Point(450, 64);
+            this.lblFuncSemUsu.Name = "lblFuncSemUsu";
+            this.lblFuncSemUsu.Size = new System.Drawing.Size(188, 18);
+            this.lblFuncSemUsu.TabIndex = 11;
+            this.lblFuncSemUsu.Text = "Funcionarios sem usuários";
+            // 
+            // lstFuncSemUsu
+            // 
+            this.lstFuncSemUsu.FormattingEnabled = true;
+            this.lstFuncSemUsu.ItemHeight = 18;
+            this.lstFuncSemUsu.Location = new System.Drawing.Point(453, 95);
+            this.lstFuncSemUsu.Name = "lstFuncSemUsu";
+            this.lstFuncSemUsu.Size = new System.Drawing.Size(260, 256);
+            this.lstFuncSemUsu.TabIndex = 12;
+            this.lstFuncSemUsu.SelectedIndexChanged += new System.EventHandler(this.lstFuncSemUsu_SelectedIndexChanged);
+            // 
+            // lblCodFunc
+            // 
+            this.lblCodFunc.AutoSize = true;
+            this.lblCodFunc.Location = new System.Drawing.Point(450, 364);
+            this.lblCodFunc.Name = "lblCodFunc";
+            this.lblCodFunc.Size = new System.Drawing.Size(138, 18);
+            this.lblCodFunc.TabIndex = 13;
+            this.lblCodFunc.Text = "Código Funcionário";
+            // 
+            // txtCodFunc
+            // 
+            this.txtCodFunc.Location = new System.Drawing.Point(594, 361);
+            this.txtCodFunc.MaxLength = 5;
+            this.txtCodFunc.Name = "txtCodFunc";
+            this.txtCodFunc.Size = new System.Drawing.Size(100, 24);
+            this.txtCodFunc.TabIndex = 14;
             // 
             // frmCadastroUsuario
             // 
@@ -281,5 +328,9 @@ namespace MercadoSA
         private System.Windows.Forms.GroupBox gpbFuncionarios;
         private System.Windows.Forms.TextBox txtRepetirSenha;
         private System.Windows.Forms.Label lblRepetirSenha;
+        private System.Windows.Forms.Label lblFuncSemUsu;
+        private System.Windows.Forms.ListBox lstFuncSemUsu;
+        private System.Windows.Forms.TextBox txtCodFunc;
+        private System.Windows.Forms.Label lblCodFunc;
     }
 }
