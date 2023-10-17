@@ -38,3 +38,4 @@ C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\EmpresaABC\Merc
 C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\EmpresaABC\MercadoSA\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\EmpresaABC\MercadoSA\obj\Debug\MercadoSA.csproj.CopyComplete
 C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\EmpresaABC\MercadoSA\obj\Debug\MercadoSA.frmCadastroUsuario.resources
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\EmpresaABC\MercadoSA\obj\Debug\MercadoSA.frmPesquisarUsuarios.resources
