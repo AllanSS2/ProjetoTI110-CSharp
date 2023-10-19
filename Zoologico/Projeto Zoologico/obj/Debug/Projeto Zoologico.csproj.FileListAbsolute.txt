@@ -1,0 +1,36 @@
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\Projeto Zoologico.exe.config
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\Projeto Zoologico.exe
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\Projeto Zoologico.pdb
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\obj\Debug\Projeto Zoologico.csproj.AssemblyReference.cache
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\obj\Debug\Projeto_Zoologico.frmMenuPrincipal.resources
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\obj\Debug\Projeto_Zoologico.Properties.Resources.resources
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\obj\Debug\Projeto Zoologico.csproj.GenerateResource.cache
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\obj\Debug\Projeto Zoologico.csproj.CoreCompileInputs.cache
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\obj\Debug\Projeto Zoologico.exe
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\obj\Debug\Projeto Zoologico.pdb
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\obj\Debug\Projeto_Zoologico.frmCadastroAnimal.resources
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\obj\Debug\Projeto_Zoologico.frmVerificarAnimal.resources
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\Google.Protobuf.dll
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\MySql.Data.dll
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\System.Buffers.dll
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\System.Memory.dll
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\ZstdNet.dll
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\Google.Protobuf.pdb
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\Google.Protobuf.xml
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\MySql.Data.xml
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\System.Buffers.xml
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\System.Memory.xml
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\obj\Debug\Projeto Zoologico.csproj.CopyComplete
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\Zoologico\Projeto Zoologico\obj\Debug\Projeto_Zoologico.frmPesquisarAnimal.resources
