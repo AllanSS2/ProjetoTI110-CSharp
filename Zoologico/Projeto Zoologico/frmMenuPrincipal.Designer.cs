@@ -59,7 +59,7 @@ namespace Projeto_Zoologico
             this.btnVerificar.Name = "btnVerificar";
             this.btnVerificar.Size = new System.Drawing.Size(319, 339);
             this.btnVerificar.TabIndex = 1;
-            this.btnVerificar.Text = "Verificar Animal";
+            this.btnVerificar.Text = "Em manutenção!!";
             this.btnVerificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnVerificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnVerificar.UseVisualStyleBackColor = true;

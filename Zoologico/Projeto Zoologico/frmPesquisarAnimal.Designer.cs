@@ -32,13 +32,13 @@ namespace Projeto_Zoologico
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPesquisarAnimal));
             this.ltbPesquisar = new System.Windows.Forms.ListBox();
             this.gpbPesquisar = new System.Windows.Forms.GroupBox();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.rdbNome = new System.Windows.Forms.RadioButton();
-            this.rdbTipo = new System.Windows.Forms.RadioButton();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.btnLimpar = new System.Windows.Forms.Button();
-            this.rdbCodigo = new System.Windows.Forms.RadioButton();
             this.lblDescricao = new System.Windows.Forms.Label();
+            this.rdbCodigo = new System.Windows.Forms.RadioButton();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.rdbTipo = new System.Windows.Forms.RadioButton();
+            this.rdbNome = new System.Windows.Forms.RadioButton();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.gpbPesquisar.SuspendLayout();
             this.SuspendLayout();
@@ -50,6 +50,7 @@ namespace Projeto_Zoologico
             this.ltbPesquisar.Name = "ltbPesquisar";
             this.ltbPesquisar.Size = new System.Drawing.Size(329, 355);
             this.ltbPesquisar.TabIndex = 7;
+            this.ltbPesquisar.SelectedIndexChanged += new System.EventHandler(this.ltbPesquisar_SelectedIndexChanged);
             // 
             // gpbPesquisar
             // 
@@ -66,29 +67,32 @@ namespace Projeto_Zoologico
             this.gpbPesquisar.TabStop = false;
             this.gpbPesquisar.Text = "Pesquisar por:";
             // 
-            // btnPesquisar
+            // lblDescricao
             // 
-            this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.Image")));
-            this.btnPesquisar.Location = new System.Drawing.Point(24, 261);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(188, 170);
-            this.btnPesquisar.TabIndex = 5;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Location = new System.Drawing.Point(151, 130);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(80, 20);
+            this.lblDescricao.TabIndex = 4;
+            this.lblDescricao.Text = "Descrição";
             // 
-            // rdbNome
+            // rdbCodigo
             // 
-            this.rdbNome.AutoSize = true;
-            this.rdbNome.Location = new System.Drawing.Point(162, 46);
-            this.rdbNome.Name = "rdbNome";
-            this.rdbNome.Size = new System.Drawing.Size(69, 24);
-            this.rdbNome.TabIndex = 2;
-            this.rdbNome.Text = "Nome";
-            this.rdbNome.UseVisualStyleBackColor = true;
-            this.rdbNome.CheckedChanged += new System.EventHandler(this.rdbNome_CheckedChanged);
+            this.rdbCodigo.AutoSize = true;
+            this.rdbCodigo.Location = new System.Drawing.Point(20, 46);
+            this.rdbCodigo.Name = "rdbCodigo";
+            this.rdbCodigo.Size = new System.Drawing.Size(77, 24);
+            this.rdbCodigo.TabIndex = 1;
+            this.rdbCodigo.Text = "Código";
+            this.rdbCodigo.UseVisualStyleBackColor = true;
+            this.rdbCodigo.CheckedChanged += new System.EventHandler(this.rdbCodigo_CheckedChanged);
+            // 
+            // txtDescricao
+            // 
+            this.txtDescricao.Location = new System.Drawing.Point(20, 153);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(355, 26);
+            this.txtDescricao.TabIndex = 4;
             // 
             // rdbTipo
             // 
@@ -101,12 +105,30 @@ namespace Projeto_Zoologico
             this.rdbTipo.UseVisualStyleBackColor = true;
             this.rdbTipo.CheckedChanged += new System.EventHandler(this.rdbTipo_CheckedChanged);
             // 
-            // txtDescricao
+            // rdbNome
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(20, 153);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(355, 26);
-            this.txtDescricao.TabIndex = 4;
+            this.rdbNome.AutoSize = true;
+            this.rdbNome.Location = new System.Drawing.Point(162, 46);
+            this.rdbNome.Name = "rdbNome";
+            this.rdbNome.Size = new System.Drawing.Size(69, 24);
+            this.rdbNome.TabIndex = 2;
+            this.rdbNome.Text = "Nome";
+            this.rdbNome.UseVisualStyleBackColor = true;
+            this.rdbNome.CheckedChanged += new System.EventHandler(this.rdbNome_CheckedChanged);
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.Image")));
+            this.btnPesquisar.Location = new System.Drawing.Point(24, 261);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(188, 170);
+            this.btnPesquisar.TabIndex = 5;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // btnLimpar
             // 
@@ -122,26 +144,6 @@ namespace Projeto_Zoologico
             this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
-            // 
-            // rdbCodigo
-            // 
-            this.rdbCodigo.AutoSize = true;
-            this.rdbCodigo.Location = new System.Drawing.Point(20, 46);
-            this.rdbCodigo.Name = "rdbCodigo";
-            this.rdbCodigo.Size = new System.Drawing.Size(77, 24);
-            this.rdbCodigo.TabIndex = 1;
-            this.rdbCodigo.Text = "Código";
-            this.rdbCodigo.UseVisualStyleBackColor = true;
-            this.rdbCodigo.CheckedChanged += new System.EventHandler(this.rdbCodigo_CheckedChanged);
-            // 
-            // lblDescricao
-            // 
-            this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(151, 130);
-            this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(80, 20);
-            this.lblDescricao.TabIndex = 4;
-            this.lblDescricao.Text = "Descrição";
             // 
             // btnVoltar
             // 

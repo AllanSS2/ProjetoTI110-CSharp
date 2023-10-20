@@ -31,9 +31,7 @@ namespace Projeto_Zoologico
 
         private void btnVerificar_Click(object sender, EventArgs e)
         {
-            frmVerificarAnimal abrir = new frmVerificarAnimal();
-            abrir.Show();
-            this.Hide();
+            
         }
     }
 }

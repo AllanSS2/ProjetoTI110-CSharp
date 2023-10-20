@@ -19,14 +19,25 @@ namespace Projeto_Zoologico
             desabilitarCampos();
         }
 
+        public frmCadastroAnimal(string nome)
+        {
+            InitializeComponent();
+            desabilitarCampos();
+            habilitarCamposAlterar();
+            carregaAnimal(nome);
+        }
+
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            frmMenuPrincipal abrir = new frmMenuPrincipal();
+            abrir.Show();
+            this.Hide();
         }
 
         //limpar
         public void limpar()
         {
+            txtCodigo.Clear();
             txtNome.Clear();
             txtTipo.Clear();
             txtIdade.Clear();
@@ -36,12 +47,11 @@ namespace Projeto_Zoologico
          //Desabilitar campos
          public void desabilitarCampos()
         {
-            
             txtNome.Enabled = false;
             txtTipo.Enabled = false;
             txtIdade.Enabled = false;
 
-            btnPesquisar.Enabled = false;
+            btnNovo.Enabled = true;
             btnCadastrar.Enabled = false;
             btnAlterar.Enabled = false;
             btnExcluir.Enabled = false;
@@ -69,6 +79,19 @@ namespace Projeto_Zoologico
             carregaCodigo();
         }
 
+        //habilitar campos alterar
+        public void habilitarCamposAlterar()
+        {
+            txtNome.Enabled = true;
+            txtIdade.Enabled = true;
+            txtTipo.Enabled = true;
+
+            btnNovo.Enabled = false;
+            btnCadastrar.Enabled = false;
+            btnAlterar.Enabled = true;
+            btnExcluir.Enabled = true;
+            btnLimpar.Enabled = true;
+        }
 
         //cadastrar
         public int cadastrarAnimal()
@@ -97,14 +120,14 @@ namespace Projeto_Zoologico
         {
             if (txtNome.Text.Equals("") || txtTipo.Text.Equals("") || txtIdade.Text.Equals(""))
             {
-                MessageBox.Show("Favor preencher os campos!!");
+                MessageBox.Show("Favor preencher os campos!!","Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                 txtNome.Focus();
             }
             else
             {
                 if (cadastrarAnimal() == 1)
                 {
-                    MessageBox.Show("Cadastrado com sucesso!!");
+                    MessageBox.Show("Cadastrado com sucesso!!", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     limpar();
                     desabilitarCampos();
                     
@@ -112,7 +135,7 @@ namespace Projeto_Zoologico
                 }
                 else
                 {
-                    MessageBox.Show("Erro ao cadastrar!!");
+                    MessageBox.Show("Erro ao cadastrar!!","Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
 
 
@@ -148,7 +171,112 @@ namespace Projeto_Zoologico
             abrir.Show();
             this.Hide();
         }
+
+        //carrega animal
+        public void carregaAnimal(string nome)
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "select * from tbAnimais where nome = @nome;";
+            comm.CommandType = CommandType.Text;
+
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@nome", MySqlDbType.VarChar, 100).Value = nome;
+
+            comm.Connection = Conexao.obterConexao();
+
+            MySqlDataReader DR;
+            DR = comm.ExecuteReader();
+            DR.Read();
+
+            txtCodigo.Text = Convert.ToString(DR.GetInt32(0));
+            txtNome.Text = DR.GetString(1);
+            txtTipo.Text = DR.GetString(2);
+            txtIdade.Text = DR.GetString(3);
+
+
+            Conexao.fecharConexao();
+        }
+
+
+        //alterar Animal
+        public int alterarAnimal(int codigo)
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "update tbAnimais set nome = @nome, tipo = @tipo, idade = @idade  where codigo = @codigo;";
+            comm.CommandType = CommandType.Text;
+
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@nome", MySqlDbType.VarChar, 50).Value = txtNome.Text;
+            comm.Parameters.Add("@tipo", MySqlDbType.VarChar, 50).Value = txtTipo.Text;
+            comm.Parameters.Add("@idade", MySqlDbType.VarChar, 100).Value = txtIdade.Text;
+            comm.Parameters.Add("@codigo", MySqlDbType.Int32).Value = codigo;
+
+            comm.Connection = Conexao.obterConexao();
+
+            int res = comm.ExecuteNonQuery();
+
+            Conexao.fecharConexao();
+
+            return res;
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if (alterarAnimal(Convert.ToInt32(txtCodigo.Text))==1)
+            {
+                MessageBox.Show("Alterado com sucesso!", "Mensagem do sistema", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                limpar();
+                desabilitarCampos();
+            }
+            else
+            {
+                MessageBox.Show("Erro ao alterar!", "Mensagem do sistema", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                limpar();
+            }
+            
+        }
+
+
+        //Excluir animal
+        public int excluirAnimal(int codigo)
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "delete from tbAnimais where codigo = @codigo;";
+            comm.CommandType = CommandType.Text;
+
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@codigo", MySqlDbType.Int32).Value = codigo;
+
+            comm.Connection = Conexao.obterConexao();
+            int res = comm.ExecuteNonQuery();
+
+            Conexao.fecharConexao();
+
+            return res;
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            DialogResult resp = MessageBox.Show("Deseja realmente excluir?", "Mensagem do sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            if (resp == DialogResult.OK)
+            {
+                if (excluirAnimal(Convert.ToInt32(txtCodigo.Text)) == 1)
+                {
+                    MessageBox.Show("Excluído com sucesso!", "Mensagem do sistema", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    limpar();
+                }
+                else
+                {
+                    MessageBox.Show("Falha ao excluír!", "Mensagem do sistema", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                }
+                
+                
+            }
+        }
     }
 
    
 }
+
+
+
