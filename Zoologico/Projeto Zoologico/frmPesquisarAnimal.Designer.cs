@@ -45,10 +45,12 @@ namespace Projeto_Zoologico
             // 
             // ltbPesquisar
             // 
+            this.ltbPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ltbPesquisar.FormattingEnabled = true;
+            this.ltbPesquisar.ItemHeight = 20;
             this.ltbPesquisar.Location = new System.Drawing.Point(463, 32);
             this.ltbPesquisar.Name = "ltbPesquisar";
-            this.ltbPesquisar.Size = new System.Drawing.Size(329, 355);
+            this.ltbPesquisar.Size = new System.Drawing.Size(329, 344);
             this.ltbPesquisar.TabIndex = 7;
             this.ltbPesquisar.SelectedIndexChanged += new System.EventHandler(this.ltbPesquisar_SelectedIndexChanged);
             // 
@@ -171,6 +173,7 @@ namespace Projeto_Zoologico
             this.Controls.Add(this.gpbPesquisar);
             this.Controls.Add(this.ltbPesquisar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmPesquisarAnimal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

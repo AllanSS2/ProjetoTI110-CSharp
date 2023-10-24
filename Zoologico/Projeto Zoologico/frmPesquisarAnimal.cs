@@ -82,7 +82,7 @@ namespace Projeto_Zoologico
         public void pesquisarNome(string nome)
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "select nome from tbAnimais where nome like '%" + nome + "%';";
+            comm.CommandText = "select nome, tipo from tbAnimais where nome like '%" + nome + "%';";
             comm.CommandType = CommandType.Text;
 
             comm.Parameters.Clear();
@@ -94,7 +94,7 @@ namespace Projeto_Zoologico
             ltbPesquisar.Items.Clear();
             while (DR.Read())
             {
-                ltbPesquisar.Items.Add(DR.GetString(0));
+                ltbPesquisar.Items.Add(DR.GetString(0) + " - " + DR.GetString(1));
             }
 
             Conexao.fecharConexao();
@@ -119,7 +119,7 @@ namespace Projeto_Zoologico
                 DR = comm.ExecuteReader();
                 DR.Read();
                 ltbPesquisar.Items.Clear();
-                ltbPesquisar.Items.Add(DR.GetString(1));
+                ltbPesquisar.Items.Add(DR.GetString(1) + " - " + DR.GetString(2));
             }
             catch (Exception)
             {
@@ -133,7 +133,7 @@ namespace Projeto_Zoologico
         public void pesquisarTipo(string tipo)
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "select nome from tbAnimais where tipo like '%" + tipo + "%';";
+            comm.CommandText = "select nome,tipo from tbAnimais where tipo like '%" + tipo + "%';";
             comm.CommandType = CommandType.Text;
 
             comm.Parameters.Clear();
@@ -145,7 +145,7 @@ namespace Projeto_Zoologico
             ltbPesquisar.Items.Clear();
             while (DR.Read())
             {
-                ltbPesquisar.Items.Add(DR.GetString(0));
+                ltbPesquisar.Items.Add(DR.GetString(0) + " - " + DR.GetString(1));
             }
 
             Conexao.fecharConexao();
@@ -159,7 +159,7 @@ namespace Projeto_Zoologico
         {
             if (txtDescricao.Text == "")
             {
-                MessageBox.Show("Favor inserir algo!", "Mensagem do sistema",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Favor inserir algo!", "Mensagem do sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -175,6 +175,7 @@ namespace Projeto_Zoologico
                 {
                     pesquisarTipo(txtDescricao.Text);
                 }
+
             }
 
         }
@@ -187,10 +188,16 @@ namespace Projeto_Zoologico
             }
             else
             {
-                string nome = ltbPesquisar.SelectedItem.ToString();
-                frmCadastroAnimal abrir = new frmCadastroAnimal(nome);
-                abrir.Show();
-                this.Hide();
+                int indiceDesejado = 0;
+                string linhaSelecionada = ltbPesquisar.SelectedItem.ToString();
+                string[] itens = linhaSelecionada.Split(new[] { " - " }, StringSplitOptions.None);
+                if (indiceDesejado == 0)
+                {
+                    string nome = itens[indiceDesejado];
+                    frmCadastroAnimal abrir = new frmCadastroAnimal(nome);
+                    abrir.Show();
+                    this.Hide();
+                }
             }
         }
     }
