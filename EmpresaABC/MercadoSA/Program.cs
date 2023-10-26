@@ -16,7 +16,7 @@ namespace MercadoSA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCadastroUsuario());
+            Application.Run(new frmWebcam());
         }
     }
 }

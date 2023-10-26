@@ -170,10 +170,18 @@ namespace Projeto_Zoologico
                 if (rdbNome.Checked)
                 {
                     pesquisarNome(txtDescricao.Text);
+                    if (ltbPesquisar.Items.Count == 0)
+                    {
+                        MessageBox.Show("Animal não encontrado", "Mensagem do sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 if (rdbTipo.Checked)
                 {
                     pesquisarTipo(txtDescricao.Text);
+                    if (ltbPesquisar.Items.Count == 0)
+                    {
+                        MessageBox.Show("Animal não encontrado", "Mensagem do sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
 
             }
