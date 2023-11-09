@@ -31,6 +31,12 @@ namespace MercadoSA
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGorjeta));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCodigoConta = new System.Windows.Forms.TextBox();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.lblFuncionario = new System.Windows.Forms.Label();
+            this.cbbFuncionarios = new System.Windows.Forms.ComboBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.btnCalcular = new System.Windows.Forms.Button();
@@ -42,19 +48,18 @@ namespace MercadoSA
             this.cbbQualidade = new System.Windows.Forms.ComboBox();
             this.lblValorGorjeta = new System.Windows.Forms.Label();
             this.lblQualidade = new System.Windows.Forms.Label();
-            this.cbbFuncionarios = new System.Windows.Forms.ComboBox();
-            this.lblFuncionario = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.lblCodigo = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.txtCodigoConta = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.dtpDataConta = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.dtpDataConta);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtCodigoConta);
             this.groupBox1.Controls.Add(this.lblCodigo);
@@ -73,17 +78,73 @@ namespace MercadoSA
             this.groupBox1.Controls.Add(this.lblValorGorjeta);
             this.groupBox1.Controls.Add(this.lblQualidade);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(108, 12);
+            this.groupBox1.Location = new System.Drawing.Point(109, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(578, 493);
+            this.groupBox1.Size = new System.Drawing.Size(578, 503);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(421, 114);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(148, 20);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Código da Conta:";
+            // 
+            // txtCodigoConta
+            // 
+            this.txtCodigoConta.Enabled = false;
+            this.txtCodigoConta.Location = new System.Drawing.Point(425, 137);
+            this.txtCodigoConta.Name = "txtCodigoConta";
+            this.txtCodigoConta.Size = new System.Drawing.Size(144, 26);
+            this.txtCodigoConta.TabIndex = 15;
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigo.Location = new System.Drawing.Point(421, 60);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(70, 20);
+            this.lblCodigo.TabIndex = 14;
+            this.lblCodigo.Text = "Código:";
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Enabled = false;
+            this.txtCodigo.Location = new System.Drawing.Point(425, 83);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(144, 26);
+            this.txtCodigo.TabIndex = 13;
+            // 
+            // lblFuncionario
+            // 
+            this.lblFuncionario.AutoSize = true;
+            this.lblFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFuncionario.Location = new System.Drawing.Point(6, 60);
+            this.lblFuncionario.Name = "lblFuncionario";
+            this.lblFuncionario.Size = new System.Drawing.Size(198, 20);
+            this.lblFuncionario.TabIndex = 12;
+            this.lblFuncionario.Text = "Selecionar Funcionário:";
+            // 
+            // cbbFuncionarios
+            // 
+            this.cbbFuncionarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbFuncionarios.FormattingEnabled = true;
+            this.cbbFuncionarios.Location = new System.Drawing.Point(6, 83);
+            this.cbbFuncionarios.Name = "cbbFuncionarios";
+            this.cbbFuncionarios.Size = new System.Drawing.Size(395, 28);
+            this.cbbFuncionarios.TabIndex = 11;
+            this.cbbFuncionarios.SelectedIndexChanged += new System.EventHandler(this.cbbFuncionarios_SelectedIndexChanged);
             // 
             // btnConfirmar
             // 
             this.btnConfirmar.BackColor = System.Drawing.Color.LightBlue;
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmar.Location = new System.Drawing.Point(227, 449);
+            this.btnConfirmar.Location = new System.Drawing.Point(226, 464);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(140, 33);
             this.btnConfirmar.TabIndex = 10;
@@ -105,7 +166,7 @@ namespace MercadoSA
             // 
             this.btnCalcular.BackColor = System.Drawing.Color.LightBlue;
             this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalcular.Location = new System.Drawing.Point(167, 258);
+            this.btnCalcular.Location = new System.Drawing.Point(167, 301);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(261, 38);
             this.btnCalcular.TabIndex = 4;
@@ -116,7 +177,7 @@ namespace MercadoSA
             // txtValorTotal
             // 
             this.txtValorTotal.Enabled = false;
-            this.txtValorTotal.Location = new System.Drawing.Point(6, 417);
+            this.txtValorTotal.Location = new System.Drawing.Point(6, 432);
             this.txtValorTotal.Name = "txtValorTotal";
             this.txtValorTotal.Size = new System.Drawing.Size(563, 26);
             this.txtValorTotal.TabIndex = 8;
@@ -135,7 +196,7 @@ namespace MercadoSA
             // 
             this.lblValorTotal.AutoSize = true;
             this.lblValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorTotal.Location = new System.Drawing.Point(6, 394);
+            this.lblValorTotal.Location = new System.Drawing.Point(6, 409);
             this.lblValorTotal.Name = "lblValorTotal";
             this.lblValorTotal.Size = new System.Drawing.Size(97, 20);
             this.lblValorTotal.TabIndex = 7;
@@ -151,7 +212,7 @@ namespace MercadoSA
             // txtValorGorjeta
             // 
             this.txtValorGorjeta.Enabled = false;
-            this.txtValorGorjeta.Location = new System.Drawing.Point(6, 352);
+            this.txtValorGorjeta.Location = new System.Drawing.Point(6, 367);
             this.txtValorGorjeta.Name = "txtValorGorjeta";
             this.txtValorGorjeta.Size = new System.Drawing.Size(563, 26);
             this.txtValorGorjeta.TabIndex = 6;
@@ -174,7 +235,7 @@ namespace MercadoSA
             // 
             this.lblValorGorjeta.AutoSize = true;
             this.lblValorGorjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorGorjeta.Location = new System.Drawing.Point(6, 329);
+            this.lblValorGorjeta.Location = new System.Drawing.Point(6, 344);
             this.lblValorGorjeta.Name = "lblValorGorjeta";
             this.lblValorGorjeta.Size = new System.Drawing.Size(142, 20);
             this.lblValorGorjeta.TabIndex = 5;
@@ -190,51 +251,13 @@ namespace MercadoSA
             this.lblQualidade.TabIndex = 3;
             this.lblQualidade.Text = "Qualidade do serviço:";
             // 
-            // cbbFuncionarios
-            // 
-            this.cbbFuncionarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbFuncionarios.FormattingEnabled = true;
-            this.cbbFuncionarios.Location = new System.Drawing.Point(6, 83);
-            this.cbbFuncionarios.Name = "cbbFuncionarios";
-            this.cbbFuncionarios.Size = new System.Drawing.Size(395, 28);
-            this.cbbFuncionarios.TabIndex = 11;
-            this.cbbFuncionarios.SelectedIndexChanged += new System.EventHandler(this.cbbFuncionarios_SelectedIndexChanged);
-            // 
-            // lblFuncionario
-            // 
-            this.lblFuncionario.AutoSize = true;
-            this.lblFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFuncionario.Location = new System.Drawing.Point(6, 60);
-            this.lblFuncionario.Name = "lblFuncionario";
-            this.lblFuncionario.Size = new System.Drawing.Size(198, 20);
-            this.lblFuncionario.TabIndex = 12;
-            this.lblFuncionario.Text = "Selecionar Funcionário:";
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Enabled = false;
-            this.txtCodigo.Location = new System.Drawing.Point(425, 83);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(144, 26);
-            this.txtCodigo.TabIndex = 13;
-            // 
-            // lblCodigo
-            // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(421, 60);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(70, 20);
-            this.lblCodigo.TabIndex = 14;
-            this.lblCodigo.Text = "Código:";
-            // 
             // btnLimpar
             // 
             this.btnLimpar.BackColor = System.Drawing.Color.LightBlue;
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpar.Image")));
             this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnLimpar.Location = new System.Drawing.Point(289, 511);
+            this.btnLimpar.Location = new System.Drawing.Point(253, 511);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(108, 38);
             this.btnLimpar.TabIndex = 11;
@@ -244,30 +267,12 @@ namespace MercadoSA
             this.btnLimpar.UseVisualStyleBackColor = false;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
-            // txtCodigoConta
-            // 
-            this.txtCodigoConta.Enabled = false;
-            this.txtCodigoConta.Location = new System.Drawing.Point(425, 137);
-            this.txtCodigoConta.Name = "txtCodigoConta";
-            this.txtCodigoConta.Size = new System.Drawing.Size(144, 26);
-            this.txtCodigoConta.TabIndex = 15;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(421, 114);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 20);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Código da Conta:";
-            // 
             // btnVoltar
             // 
             this.btnVoltar.BackColor = System.Drawing.Color.LightBlue;
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btnVoltar.Image")));
-            this.btnVoltar.Location = new System.Drawing.Point(403, 511);
+            this.btnVoltar.Location = new System.Drawing.Point(481, 511);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(108, 38);
             this.btnVoltar.TabIndex = 12;
@@ -277,11 +282,45 @@ namespace MercadoSA
             this.btnVoltar.UseVisualStyleBackColor = false;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.BackColor = System.Drawing.Color.LightBlue;
+            this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.Image")));
+            this.btnPesquisar.Location = new System.Drawing.Point(367, 511);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(108, 38);
+            this.btnPesquisar.TabIndex = 13;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPesquisar.UseVisualStyleBackColor = false;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // dtpDataConta
+            // 
+            this.dtpDataConta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataConta.Location = new System.Drawing.Point(6, 255);
+            this.dtpDataConta.Name = "dtpDataConta";
+            this.dtpDataConta.Size = new System.Drawing.Size(105, 26);
+            this.dtpDataConta.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 232);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 20);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Data:";
+            // 
             // frmGorjeta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.groupBox1);
@@ -319,5 +358,8 @@ namespace MercadoSA
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCodigoConta;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.DateTimePicker dtpDataConta;
+        private System.Windows.Forms.Label label2;
     }
 }

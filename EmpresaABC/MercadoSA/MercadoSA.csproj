@@ -137,12 +137,6 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMenuGorjeta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMenuGorjeta.Designer.cs">
-      <DependentUpon>frmMenuGorjeta.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +148,12 @@
     </Compile>
     <Compile Include="frmPesquisarFuncionarios.Designer.cs">
       <DependentUpon>frmPesquisarFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPesquisarGorjeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPesquisarGorjeta.Designer.cs">
+      <DependentUpon>frmPesquisarGorjeta.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPesquisarUsuarios.cs">
       <SubType>Form</SubType>
@@ -194,14 +194,14 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMenuGorjeta.resx">
-      <DependentUpon>frmMenuGorjeta.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPesquisarFuncionarios.resx">
       <DependentUpon>frmPesquisarFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPesquisarGorjeta.resx">
+      <DependentUpon>frmPesquisarGorjeta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPesquisarUsuarios.resx">
       <DependentUpon>frmPesquisarUsuarios.cs</DependentUpon>

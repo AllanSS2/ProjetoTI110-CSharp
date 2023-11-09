@@ -40,8 +40,8 @@ namespace Gorjeta
             this.label4 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -145,21 +145,11 @@ namespace Gorjeta
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(25, 41);
+            this.groupBox1.Location = new System.Drawing.Point(163, 51);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(437, 486);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(119, 22);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(224, 24);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Calculadora de Gorjeta";
             // 
             // button2
             // 
@@ -171,6 +161,16 @@ namespace Gorjeta
             this.button2.TabIndex = 10;
             this.button2.Text = "Confirmar";
             this.button2.UseVisualStyleBackColor = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(119, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(224, 24);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Calculadora de Gorjeta";
             // 
             // button3
             // 

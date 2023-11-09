@@ -110,6 +110,7 @@ namespace MercadoSA
             this.btnVendas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnVendas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnVendas.UseVisualStyleBackColor = true;
+            this.btnVendas.Click += new System.EventHandler(this.btnVendas_Click);
             // 
             // btnProdutos
             // 

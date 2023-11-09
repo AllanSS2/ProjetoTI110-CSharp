@@ -47,4 +47,4 @@ C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\EmpresaABC\Merc
 C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\EmpresaABC\MercadoSA\bin\Debug\AForge.Video.DirectShow.xml
 C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\EmpresaABC\MercadoSA\obj\Debug\MercadoSA.frmWebcam.resources
 C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\EmpresaABC\MercadoSA\obj\Debug\MercadoSA.frmGorjeta.resources
-C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\EmpresaABC\MercadoSA\obj\Debug\MercadoSA.frmMenuGorjeta.resources
+C:\Users\allan.ssousa1\Documents\Visual Studio 2019\ProjetoTI110\EmpresaABC\MercadoSA\obj\Debug\MercadoSA.frmPesquisarGorjeta.resources

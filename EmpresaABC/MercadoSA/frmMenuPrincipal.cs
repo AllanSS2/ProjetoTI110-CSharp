@@ -54,5 +54,12 @@ namespace MercadoSA
             abrir.Show();
             this.Hide();
         }
+
+        private void btnVendas_Click(object sender, EventArgs e)
+        {
+            frmGorjeta abrir = new frmGorjeta();
+            abrir.Show();
+            this.Hide();
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace MercadoSA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmGorjeta());
+            Application.Run(new frmMenuPrincipal());
         }
     }
 }

@@ -17,7 +17,7 @@ namespace MercadoSA
         {
             InitializeComponent();
             pesquisarNome();
-            carregaCodigoConta();
+            // carregaCodigoConta();
         }
 
         //pesquisar por nome
@@ -106,13 +106,14 @@ namespace MercadoSA
         public int confirmar()
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "insert into tbConta(avaliacao, valorConta, valorGorjeta, valorTotal, codFunc) values(@qualidade, @valorConta, @valorGorjeta, @valorTotal, @Codigo);";
+            comm.CommandText = "insert into tbConta(avaliacao, valorConta, valorGorjeta, valorTotal, dataConta, codFunc) values(@qualidade, @valorConta, @valorGorjeta, @valorTotal, @DataConta, @Codigo);";
             comm.CommandType = CommandType.Text;
 
             comm.Parameters.Add("@qualidade", MySqlDbType.VarChar, 100).Value = cbbQualidade.Text;
             comm.Parameters.Add("@valorConta", MySqlDbType.Decimal, 9).Value = txtValorConta.Text;
             comm.Parameters.Add("@valorGorjeta", MySqlDbType.Decimal, 9).Value = txtValorGorjeta.Text;
             comm.Parameters.Add("@valorTotal", MySqlDbType.Decimal, 9).Value = txtValorTotal.Text;
+            comm.Parameters.Add("@DataConta", MySqlDbType.Date).Value = Convert.ToDateTime(dtpDataConta.Text);
             comm.Parameters.Add("@Codigo", MySqlDbType.VarChar, 100).Value = txtCodigo.Text;
 
 
@@ -174,7 +175,14 @@ namespace MercadoSA
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            frmMenuGorjeta abrir = new frmMenuGorjeta();
+            frmMenuPrincipal abrir = new frmMenuPrincipal();
+            abrir.Show();
+            this.Hide();
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            frmPesquisarGorjeta abrir = new frmPesquisarGorjeta();
             abrir.Show();
             this.Hide();
         }
